@@ -1847,7 +1847,7 @@ EOT;
          the Project Gutenberg Literary Archive Foundation."
 
     - You provide a full refund of any money paid by a user who notifies
-         you in writing (or by e-mail) within 30 days of receipt that s/he
+         you in writing (or by e-mails) within 30 days of receipt that s/he
          does not agree to the terms of the full Project Gutenberg-tm
          License.  You must require such a user to return or
          destroy all copies of the works possessed in a physical medium

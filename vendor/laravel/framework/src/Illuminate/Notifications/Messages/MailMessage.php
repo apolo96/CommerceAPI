@@ -75,7 +75,7 @@ class MailMessage extends SimpleMessage
     public $priority;
 
     /**
-     * Set the view for the mail message.
+     * Set the view for the mails message.
      *
      * @param  array|string  $view
      * @param  array  $data
@@ -122,7 +122,7 @@ class MailMessage extends SimpleMessage
     }
 
     /**
-     * Set the from address for the mail message.
+     * Set the from address for the mails message.
      *
      * @param  string  $address
      * @param  string|null  $name
@@ -150,7 +150,7 @@ class MailMessage extends SimpleMessage
     }
 
     /**
-     * Set the cc address for the mail message.
+     * Set the cc address for the mails message.
      *
      * @param  string  $address
      * @param  string|null  $name
@@ -164,7 +164,7 @@ class MailMessage extends SimpleMessage
     }
 
     /**
-     * Set the bcc address for the mail message.
+     * Set the bcc address for the mails message.
      *
      * @param  string  $address
      * @param  string|null  $name
@@ -222,7 +222,7 @@ class MailMessage extends SimpleMessage
     }
 
     /**
-     * Get the data array for the mail message.
+     * Get the data array for the mails message.
      *
      * @return array
      */

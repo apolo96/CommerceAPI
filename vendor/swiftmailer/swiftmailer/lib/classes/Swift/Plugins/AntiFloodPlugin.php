@@ -9,7 +9,7 @@
  */
 
 /**
- * Reduces network flooding when sending large amounts of mail.
+ * Reduces network flooding when sending large amounts of mails.
  *
  * @author Chris Corbyn
  */

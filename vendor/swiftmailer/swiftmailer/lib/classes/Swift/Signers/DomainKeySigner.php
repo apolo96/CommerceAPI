@@ -445,7 +445,7 @@ class Swift_Signers_DomainKeySigner implements Swift_Signers_HeaderSigner
                         }
                     } else {
                         // Wooops Error
-                        throw new Swift_SwiftException('Invalid new line sequence in mail found \n without preceding \r');
+                        throw new Swift_SwiftException('Invalid new line sequence in mails found \n without preceding \r');
                     }
                     break;
                 case ' ':

@@ -38,7 +38,7 @@ class MailServiceProvider extends ServiceProvider
     protected function registerIlluminateMailer()
     {
         $this->app->singleton('mailer', function ($app) {
-            $config = $app->make('config')->get('mail');
+            $config = $app->make('config')->get('mails');
 
             // Once we have create the mailer instance, we will set a container instance
             // on the mailer. This allows us to resolve mailer classes via containers
@@ -117,16 +117,16 @@ class MailServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/resources/views' => $this->app->resourcePath('views/vendor/mail'),
-            ], 'laravel-mail');
+                __DIR__.'/resources/views' => $this->app->resourcePath('views/vendor/mails'),
+            ], 'laravel-mails');
         }
 
         $this->app->singleton(Markdown::class, function ($app) {
             $config = $app->make('config');
 
             return new Markdown($app->make('view'), [
-                'theme' => $config->get('mail.markdown.theme', 'default'),
-                'paths' => $config->get('mail.markdown.paths', []),
+                'theme' => $config->get('mails.markdown.theme', 'default'),
+                'paths' => $config->get('mails.markdown.paths', []),
             ]);
         });
     }

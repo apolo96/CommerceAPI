@@ -26,10 +26,10 @@ class TransportManager extends Manager
      */
     protected function createSmtpDriver()
     {
-        $config = $this->app->make('config')->get('mail');
+        $config = $this->app->make('config')->get('mails');
 
         // The Swift SMTP transport instance will allow us to use any SMTP backend
-        // for delivering mail such as Sendgrid, Amazon SES, or a custom server
+        // for delivering mails such as Sendgrid, Amazon SES, or a custom server
         // a developer has available. We will just pass this configured host.
         $transport = new SmtpTransport($config['host'], $config['port']);
 
@@ -63,7 +63,7 @@ class TransportManager extends Manager
      */
     protected function createSendmailDriver()
     {
-        return new SendmailTransport($this->app['config']['mail']['sendmail']);
+        return new SendmailTransport($this->app['config']['mails']['sendmail']);
     }
 
     /**
@@ -184,23 +184,23 @@ class TransportManager extends Manager
     }
 
     /**
-     * Get the default mail driver name.
+     * Get the default mails driver name.
      *
      * @return string
      */
     public function getDefaultDriver()
     {
-        return $this->app['config']['mail.driver'];
+        return $this->app['config']['mails.driver'];
     }
 
     /**
-     * Set the default mail driver name.
+     * Set the default mails driver name.
      *
      * @param  string  $name
      * @return void
      */
     public function setDefaultDriver($name)
     {
-        $this->app['config']['mail.driver'] = $name;
+        $this->app['config']['mails.driver'] = $name;
     }
 }

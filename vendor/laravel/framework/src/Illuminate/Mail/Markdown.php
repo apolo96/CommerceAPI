@@ -57,11 +57,11 @@ class Markdown
         $this->view->flushFinderCache();
 
         $contents = $this->view->replaceNamespace(
-            'mail', $this->htmlComponentPaths()
+            'mails', $this->htmlComponentPaths()
         )->make($view, $data)->render();
 
         return new HtmlString(($inliner ?: new CssToInlineStyles)->convert(
-            $contents, $this->view->make('mail::themes.'.$this->theme)->render()
+            $contents, $this->view->make('mails::themes.'.$this->theme)->render()
         ));
     }
 
@@ -77,7 +77,7 @@ class Markdown
         $this->view->flushFinderCache();
 
         $contents = $this->view->replaceNamespace(
-            'mail', $this->markdownComponentPaths()
+            'mails', $this->markdownComponentPaths()
         )->make($view, $data)->render();
 
         return new HtmlString(
@@ -135,7 +135,7 @@ class Markdown
     }
 
     /**
-     * Register new mail component paths.
+     * Register new mails component paths.
      *
      * @param  array  $paths
      * @return void

@@ -33,9 +33,9 @@ class SwiftMailerSmokeTestCase extends SwiftMailerTestCase
                     ->setCommand(SWIFT_SMOKE_SENDMAIL_COMMAND)
                     ;
                 break;
-            case 'mail':
+            case 'mails':
             case 'nativemail':
-                $transport = Swift_DependencyContainer::getInstance()->lookup('transport.mail');
+                $transport = Swift_DependencyContainer::getInstance()->lookup('transport.mails');
                 break;
             default:
                 throw new Exception('Undefined transport ['.SWIFT_SMOKE_TRANSPORT_TYPE.']');

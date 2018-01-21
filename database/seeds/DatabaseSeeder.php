@@ -15,6 +15,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        User::flushEventListeners();
+        Product::flushEventListeners();
+        Category::flushEventListeners();
+        Transaction::flushEventListeners();
+
 //         $this->call(UsersTableSeeder::class);
         factory(User::class, 1000)->create();
         factory(Category::class, 30)->create();

@@ -17,14 +17,14 @@ use InvalidArgumentException;
 
 function mail($to, $subject, $message, $additional_headers = null, $additional_parameters = null)
 {
-    $GLOBALS['mail'][] = func_get_args();
+    $GLOBALS['mails'][] = func_get_args();
 }
 
 class NativeMailerHandlerTest extends TestCase
 {
     protected function setUp()
     {
-        $GLOBALS['mail'] = array();
+        $GLOBALS['mails'] = array();
     }
 
     /**
@@ -81,14 +81,14 @@ class NativeMailerHandlerTest extends TestCase
         $mailer->handleBatch(array());
 
         // batch is empty, nothing sent
-        $this->assertEmpty($GLOBALS['mail']);
+        $this->assertEmpty($GLOBALS['mails']);
 
         // non-empty batch
         $mailer->handle($this->getRecord(Logger::ERROR, "Foo\nBar\r\n\r\nBaz"));
-        $this->assertNotEmpty($GLOBALS['mail']);
-        $this->assertInternalType('array', $GLOBALS['mail']);
-        $this->assertArrayHasKey('0', $GLOBALS['mail']);
-        $params = $GLOBALS['mail'][0];
+        $this->assertNotEmpty($GLOBALS['mails']);
+        $this->assertInternalType('array', $GLOBALS['mails']);
+        $this->assertArrayHasKey('0', $GLOBALS['mails']);
+        $params = $GLOBALS['mails'][0];
         $this->assertCount(5, $params);
         $this->assertSame($to, $params[0]);
         $this->assertSame($subject, $params[1]);
@@ -101,10 +101,10 @@ class NativeMailerHandlerTest extends TestCase
     {
         $mailer = new NativeMailerHandler('to@example.org', 'Alert: %level_name% %message%', 'from@example.org');
         $mailer->handle($this->getRecord(Logger::ERROR, "Foo\nBar\r\n\r\nBaz"));
-        $this->assertNotEmpty($GLOBALS['mail']);
-        $this->assertInternalType('array', $GLOBALS['mail']);
-        $this->assertArrayHasKey('0', $GLOBALS['mail']);
-        $params = $GLOBALS['mail'][0];
+        $this->assertNotEmpty($GLOBALS['mails']);
+        $this->assertInternalType('array', $GLOBALS['mails']);
+        $this->assertArrayHasKey('0', $GLOBALS['mails']);
+        $params = $GLOBALS['mails'][0];
         $this->assertCount(5, $params);
         $this->assertSame('Alert: ERROR Foo Bar  Baz', $params[1]);
     }

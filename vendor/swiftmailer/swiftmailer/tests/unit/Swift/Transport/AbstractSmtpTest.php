@@ -69,7 +69,7 @@ abstract class Swift_Transport_AbstractSmtpTest extends \SwiftMailerTestCase
          service extensions and requests that the server provide a list of the
          extensions it supports.  Older SMTP systems which are unable to
          support service extensions and contemporary clients which do not
-         require service extensions in the mail session being initiated, MAY
+         require service extensions in the mails session being initiated, MAY
          use HELO instead of EHLO.  Servers MUST NOT return the extended
          EHLO-style response to a HELO command.  For a particular connection
          attempt, if the server returns a "command not recognized" response to
@@ -188,14 +188,14 @@ abstract class Swift_Transport_AbstractSmtpTest extends \SwiftMailerTestCase
     {
         /* -- RFC 2821, 3.3.
 
-        There are three steps to SMTP mail transactions.  The transaction
+        There are three steps to SMTP mails transactions.  The transaction
         starts with a MAIL command which gives the sender identification.
 
         .....
 
         The first step in the procedure is the MAIL command.
 
-            MAIL FROM:<reverse-path> [SP <mail-parameters> ] <CRLF>
+            MAIL FROM:<reverse-path> [SP <mails-parameters> ] <CRLF>
 
         -- RFC 2821, 4.1.1.2.
 
@@ -360,7 +360,7 @@ abstract class Swift_Transport_AbstractSmtpTest extends \SwiftMailerTestCase
 
         -- RFC 2821, 4.1.1.3.
 
-        This command is used to identify an individual recipient of the mail
+        This command is used to identify an individual recipient of the mails
         data; multiple recipients are specified by multiple use of this
         command.  The argument field contains a forward-path and may contain
         optional parameters.
@@ -376,7 +376,7 @@ abstract class Swift_Transport_AbstractSmtpTest extends \SwiftMailerTestCase
 
         -- RFC 2821, 4.2.2.
 
-            250 Requested mail action okay, completed
+            250 Requested mails action okay, completed
             251 User not local; will forward to <forward-path>
          (See section 3.4)
             252 Cannot VRFY user, but will accept message and attempt
@@ -612,8 +612,8 @@ abstract class Swift_Transport_AbstractSmtpTest extends \SwiftMailerTestCase
     {
         /* --RFC 2821, 4.1.1.5.
 
-        This command specifies that the current mail transaction will be
-        aborted.  Any stored sender, recipients, and mail data MUST be
+        This command specifies that the current mails transaction will be
+        aborted.  Any stored sender, recipients, and mails data MUST be
         discarded, and all buffers and state tables cleared.  The receiver
         MUST send a "250 OK" reply to a RSET command with no arguments.  A
         reset command may be issued by the client at any time.
@@ -669,15 +669,15 @@ abstract class Swift_Transport_AbstractSmtpTest extends \SwiftMailerTestCase
 
         If accepted, the SMTP server returns a 354 Intermediate reply and
         considers all succeeding lines up to but not including the end of
-        mail data indicator to be the message text.
+        mails data indicator to be the message text.
 
         -- RFC 2821, 4.1.1.4.
 
         The receiver normally sends a 354 response to DATA, and then treats
         the lines (strings ending in <CRLF> sequences, as described in
-        section 2.3.7) following the command as mail data from the sender.
-        This command causes the mail data to be appended to the mail data
-        buffer.  The mail data may contain any of the 128 ASCII character
+        section 2.3.7) following the command as mails data from the sender.
+        This command causes the mails data to be appended to the mails data
+        buffer.  The mails data may contain any of the 128 ASCII character
         codes, although experience has indicated that use of control
         characters other than SP, HT, CR, and LF may cause problems and
         SHOULD be avoided when possible.

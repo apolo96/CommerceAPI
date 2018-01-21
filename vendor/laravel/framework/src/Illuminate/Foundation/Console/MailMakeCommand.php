@@ -12,7 +12,7 @@ class MailMakeCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $name = 'make:mail';
+    protected $name = 'make:mails';
 
     /**
      * The console command description.

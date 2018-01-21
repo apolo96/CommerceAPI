@@ -37,8 +37,8 @@ class Swift_Mime_HeaderEncoder_QpHeaderEncoderTest extends \SwiftMailerTestCase
         /* -- RFC 2047, 4.2.
         (2) The 8-bit hexadecimal value 20 (e.g., ISO-8859-1 SPACE) may be
        represented as "_" (underscore, ASCII 95.).  (This character may
-       not pass through some internetwork mail gateways, but its use
-       will greatly enhance readability of "Q" encoded data with mail
+       not pass through some internetwork mails gateways, but its use
+       will greatly enhance readability of "Q" encoded data with mails
        readers that do not support this encoding.)  Note that the "_"
        always represents hexadecimal 20, even if the SPACE character
        occupies a different code position in the character set in use.

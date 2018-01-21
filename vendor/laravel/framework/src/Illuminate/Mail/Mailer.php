@@ -183,7 +183,7 @@ class Mailer implements MailerContract, MailQueueContract
     {
         // First we need to parse the view, which could either be a string or an array
         // containing both an HTML and plain text versions of the view which should
-        // be used when sending an e-mail. We will extract both of them out here.
+        // be used when sending an e-mails. We will extract both of them out here.
         list($view, $plain, $raw) = $this->parseView($view);
 
         $data['message'] = $this->createMessage();
@@ -207,21 +207,21 @@ class Mailer implements MailerContract, MailQueueContract
 
         // First we need to parse the view, which could either be a string or an array
         // containing both an HTML and plain text versions of the view which should
-        // be used when sending an e-mail. We will extract both of them out here.
+        // be used when sending an e-mails. We will extract both of them out here.
         list($view, $plain, $raw) = $this->parseView($view);
 
         $data['message'] = $message = $this->createMessage();
 
-        // Once we have retrieved the view content for the e-mail we will set the body
+        // Once we have retrieved the view content for the e-mails we will set the body
         // of this message using the HTML type, which will provide a simple wrapper
         // to creating view based emails that are able to receive arrays of data.
         $this->addContent($message, $view, $plain, $raw, $data);
 
         call_user_func($callback, $message);
 
-        // If a global "to" address has been set, we will set that address on the mail
+        // If a global "to" address has been set, we will set that address on the mails
         // message. This is primarily useful during local development in which each
-        // message should be delivered into a single mail address for inspection.
+        // message should be delivered into a single mails address for inspection.
         if (isset($this->to['address'])) {
             $this->setGlobalTo($message);
         }
@@ -342,7 +342,7 @@ class Mailer implements MailerContract, MailQueueContract
     }
 
     /**
-     * Queue a new e-mail message for sending.
+     * Queue a new e-mails message for sending.
      *
      * @param  string|array|MailableContract  $view
      * @param  string|null  $queue
@@ -358,7 +358,7 @@ class Mailer implements MailerContract, MailQueueContract
     }
 
     /**
-     * Queue a new e-mail message for sending on the given queue.
+     * Queue a new e-mails message for sending on the given queue.
      *
      * @param  string  $queue
      * @param  string|array  $view
@@ -370,7 +370,7 @@ class Mailer implements MailerContract, MailQueueContract
     }
 
     /**
-     * Queue a new e-mail message for sending on the given queue.
+     * Queue a new e-mails message for sending on the given queue.
      *
      * This method didn't match rest of framework's "onQueue" phrasing. Added "onQueue".
      *
@@ -384,7 +384,7 @@ class Mailer implements MailerContract, MailQueueContract
     }
 
     /**
-     * Queue a new e-mail message for sending after (n) seconds.
+     * Queue a new e-mails message for sending after (n) seconds.
      *
      * @param  \DateTimeInterface|\DateInterval|int  $delay
      * @param  string|array|MailableContract  $view
@@ -401,7 +401,7 @@ class Mailer implements MailerContract, MailQueueContract
     }
 
     /**
-     * Queue a new e-mail message for sending after (n) seconds on the given queue.
+     * Queue a new e-mails message for sending after (n) seconds on the given queue.
      *
      * @param  string  $queue
      * @param  \DateTimeInterface|\DateInterval|int  $delay

@@ -358,7 +358,7 @@ class Event
     }
 
     /**
-     * E-mail the results of the scheduled operation.
+     * E-mails the results of the scheduled operation.
      *
      * @param  array|mixed  $addresses
      * @param  bool  $onlyIfOutputExists
@@ -378,7 +378,7 @@ class Event
     }
 
     /**
-     * E-mail the results of the scheduled operation if it produces output.
+     * E-mails the results of the scheduled operation if it produces output.
      *
      * @param  array|mixed  $addresses
      * @return $this
@@ -403,7 +403,7 @@ class Event
     }
 
     /**
-     * E-mail the output of the event to the recipients.
+     * E-mails the output of the event to the recipients.
      *
      * @param  \Illuminate\Contracts\Mail\Mailer  $mailer
      * @param  array  $addresses
@@ -424,7 +424,7 @@ class Event
     }
 
     /**
-     * Get the e-mail subject line for output results.
+     * Get the e-mails subject line for output results.
      *
      * @return string
      */

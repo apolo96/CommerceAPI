@@ -19,7 +19,7 @@ class ChannelManager extends Manager implements DispatcherContract, FactoryContr
      *
      * @var string
      */
-    protected $defaultChannel = 'mail';
+    protected $defaultChannel = 'mails';
 
     /**
      * Send the given notification to the given notifiable entities.
@@ -82,7 +82,7 @@ class ChannelManager extends Manager implements DispatcherContract, FactoryContr
     }
 
     /**
-     * Create an instance of the mail driver.
+     * Create an instance of the mails driver.
      *
      * @return \Illuminate\Notifications\Channels\MailChannel
      */

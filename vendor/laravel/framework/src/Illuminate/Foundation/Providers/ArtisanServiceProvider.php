@@ -137,7 +137,7 @@ class ArtisanServiceProvider extends ServiceProvider
         'FactoryMake' => 'command.factory.make',
         'JobMake' => 'command.job.make',
         'ListenerMake' => 'command.listener.make',
-        'MailMake' => 'command.mail.make',
+        'MailMake' => 'command.mails.make',
         'MiddlewareMake' => 'command.middleware.make',
         'MigrateMake' => 'command.migrate.make',
         'ModelMake' => 'command.model.make',
@@ -431,7 +431,7 @@ class ArtisanServiceProvider extends ServiceProvider
      */
     protected function registerMailMakeCommand()
     {
-        $this->app->singleton('command.mail.make', function ($app) {
+        $this->app->singleton('command.mails.make', function ($app) {
             return new MailMakeCommand($app['files']);
         });
     }

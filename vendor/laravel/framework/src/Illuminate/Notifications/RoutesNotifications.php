@@ -45,7 +45,7 @@ trait RoutesNotifications
         switch ($driver) {
             case 'database':
                 return $this->notifications();
-            case 'mail':
+            case 'mails':
                 return $this->email;
             case 'nexmo':
                 return $this->phone_number;

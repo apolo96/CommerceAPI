@@ -29,7 +29,7 @@ final class Author extends BaseTag implements Factory\StaticMethod
     private $authorEmail = '';
 
     /**
-     * Initializes this tag with the author name and e-mail.
+     * Initializes this tag with the author name and e-mails.
      *
      * @param string $authorName
      * @param string $authorEmail
@@ -39,7 +39,7 @@ final class Author extends BaseTag implements Factory\StaticMethod
         Assert::string($authorName);
         Assert::string($authorEmail);
         if ($authorEmail && !filter_var($authorEmail, FILTER_VALIDATE_EMAIL)) {
-            throw new \InvalidArgumentException('The author tag does not have a valid e-mail address');
+            throw new \InvalidArgumentException('The author tag does not have a valid e-mails address');
         }
 
         $this->authorName  = $authorName;

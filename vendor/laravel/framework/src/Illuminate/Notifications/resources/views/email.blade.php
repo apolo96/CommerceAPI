@@ -1,4 +1,4 @@
-@component('mail::message')
+@component('mails')
 {{-- Greeting --}}
 @if (! empty($greeting))
 # {{ $greeting }}
@@ -30,7 +30,7 @@
             $color = 'blue';
     }
 ?>
-@component('mail::button', ['url' => $actionUrl, 'color' => $color])
+@component('mails', ['url' => $actionUrl, 'color' => $color])
 {{ $actionText }}
 @endcomponent
 @endisset

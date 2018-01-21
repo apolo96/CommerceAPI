@@ -12,7 +12,7 @@
 namespace Monolog\Handler;
 
 /**
- * Base class for all mail handlers
+ * Base class for all mails handlers
  *
  * @author Gyula Sallai
  */
@@ -38,7 +38,7 @@ abstract class MailHandler extends AbstractProcessingHandler
     }
 
     /**
-     * Send a mail with the given content
+     * Send a mails with the given content
      *
      * @param string $content formatted email body to be sent
      * @param array  $records the array of log records that formed this content

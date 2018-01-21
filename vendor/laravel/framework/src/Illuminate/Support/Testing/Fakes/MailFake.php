@@ -289,7 +289,7 @@ class MailFake implements Mailer
     }
 
     /**
-     * Queue a new e-mail message for sending.
+     * Queue a new e-mails message for sending.
      *
      * @param  string|array  $view
      * @param  string|null  $queue

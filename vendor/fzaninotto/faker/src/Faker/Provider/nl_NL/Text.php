@@ -968,7 +968,7 @@ zat i op kantoor. Hij had een week bij haar zullen logeeren in Velp,
 waar zij tegenwoordig stil leefde, de zaak had ze verkocht. Maar hij
 kon niet weg, als een heusche heer.
 
-'s Zondags las i thuis de mail, om toch maar vooral niet te denken
+'s Zondags las i thuis de mails, om toch maar vooral niet te denken
 en als er visite kwam, zei Coba: "Ik geloof uit Shanghai, is 't
 niet Shanghai, Eduard?" En tante zag in gedachte al een circulaire
 waarin stond "dat wij onzen langjarigen medewerker, met ingang van

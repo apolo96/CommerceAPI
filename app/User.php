@@ -18,6 +18,7 @@ class User extends Authenticatable
 
     protected $table = 'users';
 
+
     /**
      * The attributes that are mass assignable.
      *
@@ -30,6 +31,17 @@ class User extends Authenticatable
         'verified',
         'verification_token',
         'admin'
+    ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password',
+//        'verification_token',
+        'remember_token'
     ];
 
     protected $dates = ['deleted_at'];
@@ -49,16 +61,6 @@ class User extends Authenticatable
         return ucwords($value);
     }
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
-        'verification_token',
-        'remember_token'
-    ];
 
     public function esVerificado()
     {

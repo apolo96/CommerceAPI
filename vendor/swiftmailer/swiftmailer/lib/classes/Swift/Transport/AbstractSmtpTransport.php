@@ -277,7 +277,7 @@ abstract class Swift_Transport_AbstractSmtpTransport implements Swift_Transport
     }
 
     /**
-     * Reset the current mail transaction.
+     * Reset the current mails transaction.
      */
     public function reset()
     {
