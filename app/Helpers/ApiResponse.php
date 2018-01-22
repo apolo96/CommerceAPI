@@ -8,6 +8,7 @@
 namespace App\Helpers;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 
 trait ApiResponse
@@ -39,6 +40,7 @@ trait ApiResponse
      */
     protected function showAll(Collection $collection, $code = 200)
     {
+        $collection = $this->paginate($collection);
         return $this->successResponse(['data'=>$collection],$code);
     }
 
@@ -55,5 +57,24 @@ trait ApiResponse
     protected function showMessage($message, $code = 200)
     {
         return $this->successResponse(['data'=>$message],$code);
+    }
+
+    /**
+     * @param Collection $collection
+     */
+    private function paginate(Collection $collection)
+    {
+        $page = LengthAwarePaginator::resolveCurrentPage();
+        $perPage = 15;
+        $results = $collection->slice(($page - 1) * $perPage, $perPage);
+        $paginated = new LengthAwarePaginator($results,
+            $collection->count(),
+            $perPage,
+            $page,
+            [
+                'path' => LengthAwarePaginator::resolveCurrentPath()
+            ]
+        );
+        return $paginated;
     }
 }
