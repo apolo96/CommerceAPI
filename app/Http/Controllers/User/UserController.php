@@ -8,6 +8,12 @@ use App\Http\Controllers\ApiController;
 
 class UserController extends ApiController
 {
+    function __construct()
+    {
+        $this->middleware('client.credentials')->only(['store']);
+        $this->middleware('auth:api')->except(['store','verify']);
+    }
+
     /**
      * Display a listing of the resource.
      *

@@ -17,7 +17,6 @@ use Illuminate\Http\Request;
 //    return $request->user();
 //});
 
-
 /**
  * Buyer
  */
@@ -65,3 +64,8 @@ Route::resource('sellers.products','Seller\SellerProductController',['except'=>[
  */
 Route::resource('users','User\UserController',['except'=>['create','edit']]);
 Route::get('users/verified/{token}','User\UserController@verify')->name('verify');
+
+/**
+ * Oauth
+ */
+Route::post('oauth/token','\Laravel\Passport\Http\Controllers\AccessTokenController@issueToken');
